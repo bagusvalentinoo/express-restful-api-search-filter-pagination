@@ -4,7 +4,9 @@ const app = express()
 const bodyParser = require('body-parser')
 const morgan = require('morgan')
 const model = require('./app/models/index')
+const apiRoute = require('./app/routes/api/api.route')
 require('dotenv').config()
+const { addBooksAndCategoriesForStartingSeeder } = require('./app/seeders/book_category.seeder')
 
 app.use(express.static('public'))
 
@@ -27,9 +29,14 @@ const corsOptions = {
 app.use(cors(corsOptions))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
+app.use('/api', apiRoute)
 
 const port = process.env.APP_PORT || 8080
 
 app.listen(port, () => {
+  // model.sequelize.sync({ alter: true })
+
+  // addBooksAndCategoriesForStartingSeeder()
+
   console.log(`Server is running on http://localhost:${port}`)
 })
