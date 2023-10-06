@@ -51,7 +51,7 @@ const getBooks = async (req, res) => {
             { [Op.like]: `%${search}%` }
           ),
           Sequelize.where(
-            Sequelize.cast(Sequelize.col('Book.number_of_page'), 'varchar'),
+            Sequelize.cast(Sequelize.col('Book.number_of_pages'), 'varchar'),
             { [Op.like]: `%${search}%` }
           )
         ]
@@ -84,7 +84,7 @@ const createBook = async (req, res) => {
       publisher: req.body.publisher,
       publication_year: req.body.publication_year,
       isbn: req.body.isbn,
-      number_of_page: req.body.number_of_page
+      number_of_pages: req.body.number_of_pages
     }, { returning: true, transaction: t })
 
     if (req.body.categories) await book.setCategories(req.body.categories, { transaction: t })
@@ -143,7 +143,7 @@ const updateBook = async (req, res) => {
       publisher: req.body.publisher,
       publication_year: parseInt(req.body.publication_year),
       isbn: req.body.isbn,
-      number_of_page: parseInt(req.body.number_of_page)
+      number_of_pages: parseInt(req.body.number_of_pages)
     }, { returning: true, transaction: t })
 
     if (req.body.categories) await book.setCategories(req.body.categories, { transaction: t })
