@@ -1,6 +1,6 @@
 const CategoryResource = require('../resources/category.resource')
 const response = require('../../../utils/response.util')
-const { Sequelize, sequelize, Op, Category } = require('../../../models/index')
+const { Sequelize, sequelize, Op, Category, BookCategory } = require('../../../models/index')
 const { orderBy } = require('../../../utils/query.util')
 
 const getCategories = async (req, res) => {
@@ -116,15 +116,27 @@ const updateCategory = async (req, res) => {
 const deleteCategories = async (req, res) => {
   const t = await sequelize.transaction()
   try {
-    const deletedCategories = await Category.destroy({
+    const categories = await Category.findAll({
+      where: {
+        id: req.body.ids
+      }
+    })
+
+    if (categories.length === 0) response.throwNewError(400, 'Oops, Category Not Found')
+
+    categories.forEach(async (category) => {
+      await BookCategory.destroy({
+        where: {
+          category_id: category.id
+        }
+      }, { transaction: t })
+    })
+
+    await Category.destroy({
       where: {
         id: req.body.ids
       }
     }, { transaction: t })
-
-    if (!deletedCategories) response.throwNewError(400, 'Oops, Category Not Found')
-
-    await t.commit()
 
     return response.success(res, 200, 'Data Successfully Deleted')
   } catch (error) {
