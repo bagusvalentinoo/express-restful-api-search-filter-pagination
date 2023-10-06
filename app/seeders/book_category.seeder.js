@@ -36,7 +36,7 @@ exports.addBooksAndCategoriesForStartingSeeder = async () => {
     updated_at: new Date()
   })
 
-  const categorySeniMusik = await Category.create({
+  const categorySeniDanMusik = await Category.create({
     title: 'Seni dan Musik',
     description: 'Buku-buku tentang seni rupa, musik, dan seni pertunjukan.',
     created_at: new Date(),
@@ -99,14 +99,14 @@ exports.addBooksAndCategoriesForStartingSeeder = async () => {
     updated_at: new Date()
   })
 
-  const categoryAlamLingkungan = await Category.create({
+  const categoryAlamDanLingkungan = await Category.create({
     title: 'Alam dan Lingkungan',
     description: 'Buku-buku tentang lingkungan alam dan pelestarian alam.',
     created_at: new Date(),
     updated_at: new Date()
   })
 
-  const categoryKesehatanKedokteran = await Category.create({
+  const categoryKesehatanDanKedokteran = await Category.create({
     title: 'Kesehatan dan Kedokteran',
     description: 'Buku-buku tentang kesehatan dan bidang kedokteran.',
     created_at: new Date(),
@@ -211,435 +211,603 @@ exports.addBooksAndCategoriesForStartingSeeder = async () => {
     updated_at: new Date()
   })
 
-  const bookTheAlchemist = await Book.create({
-    title: 'The Alchemist',
-    author: 'Paulo Coelho',
-    publisher: 'HarperOne',
-    publication_year: 2014,
-    isbn: '9780061122415',
-    number_of_page: 197,
+  const book1 = await Book.create({
+    title: 'Beyond the Horizon: Exploring the Unknown',
+    author: 'Emily Johnson',
+    publisher: 'HarperCollins',
+    publication_year: 2015,
+    isbn: '978-1452159869',
+    number_of_pages: 320,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheAlchemist.setCategories([categoryFiksi, categoryPengembanganDiri])
+  book1.setCategories([categoryFiksi, categorySejarahDunia, categoryAlamDanLingkungan])
 
-  const bookEducated = await Book.create({
-    title: 'Educated',
-    author: 'Tara Westover',
+  const book2 = await Book.create({
+    title: 'The Power of Human Connection',
+    author: 'Michael Anderson',
     publisher: 'Random House',
-    publication_year: 2018,
-    isbn: '9780399590504',
-    number_of_page: 334,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookEducated.setCategories([categoryNonFiksi, categoryPendidikan])
-
-  const bookBecoming = await Book.create({
-    title: 'Becoming',
-    author: 'Michelle Obama',
-    publisher: 'Crown Publishing Group',
-    publication_year: 2018,
-    isbn: '9781524763138',
-    number_of_page: 426,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookBecoming.setCategories([categoryNonFiksi])
-
-  const bookSapiens = await Book.create({
-    title: 'Sapiens: A Brief History of Humankind',
-    author: 'Yuval Noah Harari',
-    publisher: 'Harper',
-    publication_year: 2015,
-    isbn: '9780062316097',
-    number_of_page: 443,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookSapiens.setCategories([categoryNonFiksi, categorySejarahDunia])
-
-  const bookBadBlood = await Book.create({
-    title: 'Bad Blood: Secrets and Lies in a Silicon Valley Startup',
-    author: 'John Carreyrou',
-    publisher: 'Knopf',
-    publication_year: 2018,
-    isbn: '9781524731656',
-    number_of_page: 339,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookBadBlood.setCategories([categoryNonFiksi, categoryTeknologi])
-
-  const bookWhereTheCrawdadsSing = await Book.create({
-    title: 'Where the Crawdads Sing',
-    author: 'Delia Owens',
-    publisher: 'G.P. Putnam\'s Sons',
-    publication_year: 2018,
-    isbn: '9780735219090',
-    number_of_page: 384,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookWhereTheCrawdadsSing.setCategories([categoryFiksi, categoryHiburan])
-
-  const bookCirce = await Book.create({
-    title: 'Circe',
-    author: 'Madeline Miller',
-    publisher: 'Little, Brown and Company',
-    publication_year: 2018,
-    isbn: '9780316556347',
-    number_of_page: 393,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookCirce.setCategories([categoryFiksi, categorySejarahDunia])
-
-  const bookTheSilentPatient = await Book.create({
-    title: 'The Silent Patient',
-    author: 'Alex Michaelides',
-    publisher: 'Celadon Books',
-    publication_year: 2019,
-    isbn: '9781250301697',
-    number_of_page: 323,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheSilentPatient.setCategories([categoryFiksi, categoryHiburan, categoryPsikologi])
-
-  const bookAtomicHabits = await Book.create({
-    title: 'Atomic Habits: An Easy & Proven Way to Build Good Habits & Break Bad Ones',
-    author: 'James Clear',
-    publisher: 'Avery',
-    publication_year: 2018,
-    isbn: '9780735211292',
-    number_of_page: 319,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookAtomicHabits.setCategories([categoryNonFiksi, categoryPengembanganDiri, categoryPsikologi])
-
-  const bookTheGirlOnTheTrain = await Book.create({
-    title: 'The Girl on the Train',
-    author: 'Paula Hawkins',
-    publisher: 'Riverhead Books',
-    publication_year: 2015,
-    isbn: '9781594634024',
-    number_of_page: 316,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheGirlOnTheTrain.setCategories([categoryFiksi, categoryHiburan, categoryPsikologi])
-
-  const bookDivergent = await Book.create({
-    title: 'Divergent',
-    author: 'Veronica Roth',
-    publisher: 'Katherine Tegen Books',
-    publication_year: 2011,
-    isbn: '9780062024039',
-    number_of_page: 487,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookDivergent.setCategories([categoryFiksi, categoryHiburan, categorySainsAlam])
-
-  const bookTheMazeRunner = await Book.create({
-    title: 'The Maze Runner',
-    author: 'James Dashner',
-    publisher: 'Delacorte Press',
-    publication_year: 2009,
-    isbn: '9780385737951',
-    number_of_page: 375,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheMazeRunner.setCategories([categoryFiksi, categoryHiburan, categorySainsAlam])
-
-  const bookTheHungerGames = await Book.create({
-    title: 'The Hunger Games',
-    author: 'Suzanne Collins',
-    publisher: 'Scholastic Corporation',
-    publication_year: 2008,
-    isbn: '9780439023481',
-    number_of_page: 374,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheHungerGames.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia])
-
-  const bookGoneGirls = await Book.create({
-    title: 'Gone Girl',
-    author: 'Gillian Flynn',
-    publisher: 'Crown Publishing Group',
-    publication_year: 2012,
-    isbn: '9780307588371',
-    number_of_page: 415,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookGoneGirls.setCategories([categoryFiksi, categoryHiburan])
-
-  const bookTheHelp = await Book.create({
-    title: 'The Help',
-    author: 'Kathryn Stockett',
-    publisher: 'Penguin Group',
-    publication_year: 2009,
-    isbn: '9780399155345',
-    number_of_page: 451,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheHelp.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia])
-
-  const bookTheFaultInOurStars = await Book.create({
-    title: 'The Fault in Our Stars',
-    author: 'John Green',
-    publisher: 'Dutton Books',
-    publication_year: 2012,
-    isbn: '9780525478812',
-    number_of_page: 313,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheFaultInOurStars.setCategories([categoryFiksi, categoryHiburan, categorySastra])
-
-  const bookTheImmortalLifeOfHenriettaLacks = await Book.create({
-    title: 'The Immortal Life of Henrietta Lacks',
-    author: 'Rebecca Skloot',
-    publisher: 'Crown Publishing Group',
-    publication_year: 2010,
-    isbn: '9781400052172',
-    number_of_page: 370,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheImmortalLifeOfHenriettaLacks.setCategories([categoryNonFiksi, categorySainsAlam])
-
-  const bookTheBookThief = await Book.create({
-    title: 'The Book Thief',
-    author: 'Markus Zusak',
-    publisher: 'Alfred A. Knopf',
-    publication_year: 2005,
-    isbn: '9780375831003',
-    number_of_page: 552,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheBookThief.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia, categorySastra])
-
-  const bookTheNightCircus = await Book.create({
-    title: 'The Night Circus',
-    author: 'Erin Morgenstern',
-    publisher: 'Doubleday',
-    publication_year: 2011,
-    isbn: '9780385534635',
-    number_of_page: 387,
-    created_at: new Date(),
-    updated_at: new Date()
-  })
-  bookTheNightCircus.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia, categorySastra])
-
-  const bookTheGoldfinch = await Book.create({
-    title: 'The Goldfinch',
-    author: 'Donna Tartt',
-    publisher: 'Little, Brown and Company',
     publication_year: 2013,
-    isbn: '9780316055437',
-    number_of_page: 771,
+    isbn: '978-0679767892',
+    number_of_pages: 280,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheGoldfinch.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia, categorySastra, categorySeniMusik])
+  book2.setCategories([categoryNonFiksi, categoryPsikologi, categoryPengembanganDiri])
 
-  const bookAGameOfThrones = await Book.create({
-    title: 'A Game of Thrones',
-    author: 'George R.R. Martin',
-    publisher: 'Bantam Books',
-    publication_year: 1996,
-    isbn: '9780553103540',
-    number_of_page: 694,
+  const book3 = await Book.create({
+    title: 'Innovation in the Digital Age',
+    author: 'Sarah Clark',
+    publisher: 'MIT Press',
+    publication_year: 2017,
+    isbn: '978-0262535439',
+    number_of_pages: 240,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookAGameOfThrones.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia])
+  book3.setCategories([categoryTeknologi, categoryEkonomi, categoryPengembanganDiri])
 
-  const bookTheShining = await Book.create({
-    title: 'The Shining',
-    author: 'Stephen King',
-    publisher: 'Doubleday',
-    publication_year: 1977,
-    isbn: '9780385121675',
-    number_of_page: 447,
+  const book4 = await Book.create({
+    title: 'The Art of Culinary Masterpieces',
+    author: 'Jacques Leblanc',
+    publisher: "Chef's Editions",
+    publication_year: 2012,
+    isbn: '978-0987654321',
+    number_of_pages: 200,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheShining.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia])
+  book4.setCategories([categoryKuliner, categorySeniDanMusik, categoryPendidikan])
 
-  const bookTheDaVinciCode = await Book.create({
-    title: 'The Da Vinci Code',
-    author: 'Dan Brown',
-    publisher: 'Doubleday',
-    publication_year: 2003,
-    isbn: '9780385504201',
-    number_of_page: 454,
+  const book5 = await Book.create({
+    title: 'Eco-Friendly Living: A Guide to Sustainability',
+    author: 'Emma Green',
+    publisher: 'EcoPress',
+    publication_year: 2014,
+    isbn: '978-0615436892',
+    number_of_pages: 180,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheDaVinciCode.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia, categoryReligi])
+  book5.setCategories([categoryAlamDanLingkungan, categoryPendidikan, categoryTeknologi])
 
-  const bookTheRoad = await Book.create({
-    title: 'The Road',
-    author: 'Cormac McCarthy',
-    publisher: 'Knopf',
-    publication_year: 2006,
-    isbn: '9780307265432',
-    number_of_page: 241,
+  const book6 = await Book.create({
+    title: 'The World of Politics: A Comprehensive Overview',
+    author: 'David Mitchell',
+    publisher: 'Oxford University Press',
+    publication_year: 2016,
+    isbn: '978-0198745375',
+    number_of_pages: 350,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheRoad.setCategories([categoryFiksi, categoryHiburan, categorySejarahDunia, categorySastra, categorySeniMusik])
+  book6.setCategories([categoryPolitik, categorySejarahDunia, categoryFilsafat])
 
-  const bookTheCuriousIncidentOfTheDogInTheNightTime = await Book.create({
-    title: 'The Curious Incident of the Dog in the Night-Time',
-    author: 'Mark Haddon',
-    publisher: 'Doubleday',
-    publication_year: 2003,
-    isbn: '9780385509459',
-    number_of_page: 226,
+  const book7 = await Book.create({
+    title: 'Rhythms of the Soul: Exploring Music Across Cultures',
+    author: 'Maria Rodriguez',
+    publisher: 'Global Soundscapes',
+    publication_year: 2018,
+    isbn: '978-1554075823',
+    number_of_pages: 280,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheCuriousIncidentOfTheDogInTheNightTime.setCategories([categoryFiksi, categoryHiburan, categoryPsikologi])
+  book7.setCategories([categoryMusik, categorySeniDanMusik, categorySastra])
 
-  const bookTheLovelyBones = await Book.create({
-    title: 'The Lovely Bones',
-    author: 'Alice Sebold',
-    publisher: 'Little, Brown and Company',
-    publication_year: 2002,
-    isbn: '9780316666343',
-    number_of_page: 372,
+  const book8 = await Book.create({
+    title: 'The Mind-Body Connection: Understanding Mental and Physical Health',
+    author: 'Dr. Emily White',
+    publisher: 'Health Harmony',
+    publication_year: 2011,
+    isbn: '978-0987654321',
+    number_of_pages: 220,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheLovelyBones.setCategories([categoryFiksi, categorySastra])
+  book8.setCategories([categoryKesehatanDanKedokteran, categoryPsikologi, categoryPengembanganDiri])
 
-  const bookDune = await Book.create({
-    title: 'Dune',
-    author: 'Frank Herbert',
-    publisher: 'Ace Books',
-    publication_year: 1965,
-    isbn: '9780441172719',
-    number_of_page: 412,
+  const book9 = await Book.create({
+    title: 'The Universe Within: Discovering Our Inner Cosmos',
+    author: 'Alan Foster',
+    publisher: 'Cosmos Publishing',
+    publication_year: 2019,
+    isbn: '978-1635305948',
+    number_of_pages: 300,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookDune.setCategories([categoryFiksi, categoryHiburan, categorySainsAlam])
+  book9.setCategories([categorySainsAlam, categoryFilsafat, categorySastra])
 
-  const bookToKillAMockingbird = await Book.create({
-    title: 'To Kill a Mockingbird',
-    author: 'Harper Lee',
-    publisher: 'J.B. Lippincott & Co.',
-    publication_year: 1960,
-    isbn: '9780061122415',
-    number_of_page: 281,
+  const book10 = await Book.create({
+    title: 'Beyond Borders: A Global Perspective on Economics',
+    author: 'Laura Davis',
+    publisher: 'Worldview Publications',
+    publication_year: 2014,
+    isbn: '978-0987654321',
+    number_of_pages: 260,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookToKillAMockingbird.setCategories([categoryFiksi, categorySejarahDunia, categorySastra])
+  book10.setCategories([categoryEkonomi, categoryPolitik, categorySejarahDunia])
 
-  const book1984 = await Book.create({
-    title: '1984',
-    author: 'George Orwell',
-    publisher: 'Secker and Warburg',
-    publication_year: 1949,
-    isbn: '9780451524935',
-    number_of_page: 328,
+  const book11 = await Book.create({
+    title: 'The Quantum Paradox: Exploring the Mysteries of Subatomic World',
+    author: 'Dr. Jonathan Lee',
+    publisher: 'Quantum Books',
+    publication_year: 2016,
+    isbn: '978-1543210987',
+    number_of_pages: 280,
     created_at: new Date(),
     updated_at: new Date()
   })
-  book1984.setCategories([categoryFiksi, categoryPolitik, categorySastra])
+  book11.setCategories([categorySainsAlam, categoryFilsafat, categoryTeknologi])
 
-  const bookTheGreatGatsby = await Book.create({
-    title: 'The Great Gatsby',
-    author: 'F. Scott Fitzgerald',
-    publisher: "Charles Scribner's Sons",
-    publication_year: 1925,
-    isbn: '9780743273565',
-    number_of_page: 180,
+  const book12 = await Book.create({
+    title: 'The Art of Mindfulness: Cultivating Inner Peace',
+    author: 'Olivia Williams',
+    publisher: 'Serenity Press',
+    publication_year: 2013,
+    isbn: '978-1628657893',
+    number_of_pages: 240,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheGreatGatsby.setCategories([categoryFiksi, categorySejarahDunia, categorySastra])
+  book12.setCategories([categoryKesehatanDanKedokteran, categoryPengembanganDiri, categoryFilsafat])
 
-  const bookBraveNewWorld = await Book.create({
-    title: 'Brave New World',
-    author: 'Aldous Huxley',
-    publisher: 'Chatto & Windus',
-    publication_year: 1932,
-    isbn: '9780060850524',
-    number_of_page: 288,
+  const book13 = await Book.create({
+    title: 'Sculpting Dreams: A Journey into Surrealist Art',
+    author: 'Elena Martinez',
+    publisher: 'Dreamweaver Publications',
+    publication_year: 2017,
+    isbn: '978-1789345672',
+    number_of_pages: 320,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookBraveNewWorld.setCategories([categoryFiksi, categorySainsSosial, categoryPolitik])
+  book13.setCategories([categorySeniDanMusik, categorySastra, categorySejarahDunia])
 
-  const bookTheCatcherInTheRye = await Book.create({
-    title: 'The Catcher in the Rye',
-    author: 'J.D. Salinger',
-    publisher: 'Little, Brown and Company',
-    publication_year: 1951,
-    isbn: '9780316769488',
-    number_of_page: 277,
+  const book14 = await Book.create({
+    title: 'Coding the Future: Innovations in Computer Science',
+    author: 'Alex Turner',
+    publisher: 'CodeCrafters',
+    publication_year: 2015,
+    isbn: '978-0998743210',
+    number_of_pages: 260,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheCatcherInTheRye.setCategories([categoryFiksi, categorySastra, categoryPsikologi])
+  book14.setCategories([categoryTeknologi, categoryPendidikan, categoryFilsafat])
 
-  const bookLordOfTheFlies = await Book.create({
-    title: 'Lord of the Flies',
-    author: 'William Golding',
-    publisher: 'Faber and Faber',
-    publication_year: 1954,
-    isbn: '9780143124290',
-    number_of_page: 224,
+  const book15 = await Book.create({
+    title: 'Harmony in Diversity: Exploring Multiculturalism in the Modern World',
+    author: 'Maya Singh',
+    publisher: 'Global Harmony Publishers',
+    publication_year: 2018,
+    isbn: '978-1635498712',
+    number_of_pages: 300,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookLordOfTheFlies.setCategories([categoryFiksi, categoryPsikologi, categorySastra])
+  book15.setCategories([categorySainsSosial, categoryFilsafat, categoryPolitik])
 
-  const bookTheHobbit = await Book.create({
-    title: 'The Hobbit',
-    author: 'J.R.R. Tolkien',
-    publisher: 'Allen & Unwin',
-    publication_year: 1937,
-    isbn: '9780345534835',
-    number_of_page: 310,
+  const book16 = await Book.create({
+    title: 'Culinary Adventures: A Global Gastronomic Tour',
+    author: 'Carlos Mendez',
+    publisher: 'Foodie Journeys',
+    publication_year: 2014,
+    isbn: '978-1456789012',
+    number_of_pages: 220,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheHobbit.setCategories([categoryFiksi, categoryHiburan, categorySastra])
+  book16.setCategories([categoryKuliner, categoryWisata, categorySejarahDunia])
 
-  const bookTheLordOfTheRings = await Book.create({
-    title: 'The Lord of the Rings',
-    author: 'J.R.R. Tolkien',
-    publisher: 'Allen & Unwin',
-    publication_year: 1954,
-    isbn: '9780261102385',
-    number_of_page: 1178,
+  const book17 = await Book.create({
+    title: 'Beyond Boundaries: The Intersection of Science and Spirituality',
+    author: 'Dr. Sophia Carter',
+    publisher: 'SpiritScience Publications',
+    publication_year: 2019,
+    isbn: '978-1786423094',
+    number_of_pages: 280,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookTheLordOfTheRings.setCategories([categoryFiksi, categoryHiburan, categorySastra])
+  book17.setCategories([categorySainsAlam, categoryFilsafat])
 
-  const bookMobyDick = await Book.create({
-    title: 'Moby-Dick',
-    author: 'Herman Melville',
-    publisher: 'Harper & Brothers',
-    publication_year: 1851,
-    isbn: '9781853260087',
-    number_of_page: 625,
+  const book18 = await Book.create({
+    title: "The Entrepreneur's Blueprint: Building Successful Ventures",
+    author: 'Mark Anderson',
+    publisher: 'Startup Press',
+    publication_year: 2016,
+    isbn: '978-1627364092',
+    number_of_pages: 250,
     created_at: new Date(),
     updated_at: new Date()
   })
-  bookMobyDick.setCategories([categoryFiksi, categorySejarahDunia, categorySastra])
+  book18.setCategories([categoryEkonomi, categoryPengembanganDiri])
+
+  const book19 = await Book.create({
+    title: 'Beyond the Stars: Exploring the Universe\'s Wonders',
+    author: 'Dr. Amanda Roberts',
+    publisher: 'Stellar Publishing',
+    publication_year: 2012,
+    isbn: '978-1443210987',
+    number_of_pages: 290,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book19.setCategories([categorySainsAlam, categoryFilsafat, categorySastra])
+
+  const book20 = await Book.create({
+    title: 'The Art of Cinematography: Crafting Visual Stories',
+    author: 'Daniel Lee',
+    publisher: 'Cinematic Creations',
+    publication_year: 2017,
+    isbn: '978-1789065432',
+    number_of_pages: 270,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book20.setCategories([categorySeniDanMusik, categoryFilm, categoryDesain])
+
+  const book21 = await Book.create({
+    title: 'The Age of Artificial Intelligence: Navigating the Future',
+    author: 'Dr. Sarah Chen',
+    publisher: 'TechVision Publishing',
+    publication_year: 2019,
+    isbn: '978-1796543210',
+    number_of_pages: 310,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book21.setCategories([categoryTeknologi, categoryFilsafat, categorySainsAlam])
+
+  const book22 = await Book.create({
+    title: 'Infinite Horizons: Understanding the Cosmos',
+    author: 'Dr. Richard Turner',
+    publisher: 'Cosmic Explorations',
+    publication_year: 2018,
+    isbn: '978-1632456789',
+    number_of_pages: 290,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book22.setCategories([categorySainsAlam, categoryFilsafat, categoryPendidikan])
+
+  const book23 = await Book.create({
+    title: 'The Art of Diplomacy: Navigating Global Politics',
+    author: 'Ambassador Mia Johnson',
+    publisher: 'Diplomatic Press',
+    publication_year: 2017,
+    isbn: '978-1452678903',
+    number_of_pages: 280,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book23.setCategories([categoryPolitik, categoryFilsafat, categorySejarahDunia])
+
+  const book24 = await Book.create({
+    title: 'Rhythms of the Rainforest: Exploring Biodiversity',
+    author: 'Dr. Linda Martinez',
+    publisher: 'Rainforest Publications',
+    publication_year: 2015,
+    isbn: '978-1623456789',
+    number_of_pages: 270,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book24.setCategories([categoryAlamDanLingkungan, categorySainsAlam, categoryPendidikan])
+
+  const book25 = await Book.create({
+    title: 'The Epicurean Explorer: A Gastronomic Journey',
+    author: 'Chef Pierre Laroche',
+    publisher: 'Epicurean Press',
+    publication_year: 2013,
+    isbn: '978-1567890123',
+    number_of_pages: 260,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book25.setCategories([categoryKuliner, categoryWisata, categorySeniDanMusik])
+
+  const book26 = await Book.create({
+    title: 'Digital Renaissance: Artistry in the Age of Technology',
+    author: 'Dr. Maria Rodriguez',
+    publisher: 'TechnoArt Publications',
+    publication_year: 2016,
+    isbn: '978-1623456123',
+    number_of_pages: 280,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book26.setCategories([categorySeniDanMusik, categoryTeknologi, categorySejarahDunia])
+
+  const book27 = await Book.create({
+    title: 'The Wellness Revolution: A Holistic Approach to Health',
+    author: 'Dr. Emily Davis',
+    publisher: 'Wellness Publications',
+    publication_year: 2014,
+    isbn: '978-1543210654',
+    number_of_pages: 250,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book27.setCategories([categoryKesehatanDanKedokteran, categoryPengembanganDiri, categoryAlamDanLingkungan])
+
+  const book28 = await Book.create({
+    title: 'Voices of Freedom: Stories from Civil Rights Movements',
+    author: 'Jessica Thompson',
+    publisher: 'Freedom Chronicles',
+    publication_year: 2015,
+    isbn: '978-1634567890',
+    number_of_pages: 290,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book28.setCategories([categorySejarahDunia, categoryPolitik, categorySastra])
+
+  const book29 = await Book.create({
+    title: "The Innovator's Dilemma: Disruptive Technologies and Business Transformation",
+    author: 'Clayton Christensen',
+    publisher: 'Harvard Business Review Press',
+    publication_year: 2011,
+    isbn: '978-1633678901',
+    number_of_pages: 240,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book29.setCategories([categoryTeknologi, categoryEkonomi])
+
+  const book30 = await Book.create({
+    title: 'The Art of Influence: Persuasion in a Changing World',
+    author: 'Dr. Vanessa Carter',
+    publisher: 'Influence Dynamics',
+    publication_year: 2018,
+    isbn: '978-1789345678',
+    number_of_pages: 270,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book30.setCategories([categoryPsikologi, categoryFilsafat, categoryPendidikan])
+
+  const book31 = await Book.create({
+    title: 'The Infinite Mind: Exploring Consciousness and Beyond',
+    author: 'Dr. Alan Parker',
+    publisher: 'Mindful Publishing',
+    publication_year: 2017,
+    isbn: '978-1687654321',
+    number_of_pages: 320,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book31.setCategories([categoryPsikologi, categoryFilsafat, categorySainsAlam])
+
+  const book32 = await Book.create({
+    title: 'The Future of Work: Embracing Technological Change',
+    author: 'Dr. Rebecca Johnson',
+    publisher: 'Workforce Books',
+    publication_year: 2019,
+    isbn: '978-1798765432',
+    number_of_pages: 280,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book32.setCategories([categoryTeknologi, categoryEkonomi, categoryPendidikan])
+
+  const book33 = await Book.create({
+    title: 'The Creative Entrepreneur: Nurturing Innovation in Business',
+    author: 'Sarah Collins',
+    publisher: 'Innovation Press',
+    publication_year: 2016,
+    isbn: '978-1632908765',
+    number_of_pages: 250,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book33.setCategories([categorySeniDanMusik, categoryPengembanganDiri])
+
+  const book34 = await Book.create({
+    title: 'The Quantum World: Unraveling the Mysteries of Particle Physics',
+    author: 'Dr. Christopher Lee',
+    publisher: 'Quantum Publications',
+    publication_year: 2018,
+    isbn: '978-1543210987',
+    number_of_pages: 300,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book34.setCategories([categorySainsAlam, categoryFilsafat, categoryTeknologi])
+
+  const book35 = await Book.create({
+    title: 'The Nature of Reality: Exploring Quantum Mechanics',
+    author: 'Dr. Evelyn Adams',
+    publisher: 'Reality Press',
+    publication_year: 2015,
+    isbn: '978-1623456982',
+    number_of_pages: 270,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book35.setCategories([categorySainsAlam, categoryFilsafat, categoryPendidikan])
+
+  const book36 = await Book.create({
+    title: 'The Power of Compassion: Transforming Lives Through Kindness',
+    author: 'Lily Johnson',
+    publisher: 'Compassion Books',
+    publication_year: 2013,
+    isbn: '978-1456782345',
+    number_of_pages: 220,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book36.setCategories([categoryPsikologi, categoryPengembanganDiri])
+
+  const book37 = await Book.create({
+    title: 'The Global Citizen: Navigating Cultural Diversity',
+    author: 'Dr. Michael Brown',
+    publisher: 'Global Harmony Publications',
+    publication_year: 2017,
+    isbn: '978-1635498712',
+    number_of_pages: 280,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book37.setCategories([categorySainsSosial, categoryFilsafat, categoryPolitik])
+
+  const book38 = await Book.create({
+    title: 'The Age of Exploration: Discovering New Worlds',
+    author: 'Victoria Turner',
+    publisher: 'Exploration Press',
+    publication_year: 2014,
+    isbn: '978-1627364092',
+    number_of_pages: 260,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book38.setCategories([categorySejarahDunia, categoryPendidikan, categorySainsAlam])
+
+  const book39 = await Book.create({
+    title: 'The Digital Revolution: Transforming Industries and Societies',
+    author: 'Dr. Andrew Mitchell',
+    publisher: 'Digital Dynamics',
+    publication_year: 2016,
+    isbn: '978-1638907654',
+    number_of_pages: 290,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book39.setCategories([categoryTeknologi, categorySainsSosial, categoryEkonomi])
+
+  const book40 = await Book.create({
+    title: 'The Creative Mind: Cultivating Imagination and Innovation',
+    author: 'Emily Roberts',
+    publisher: 'Creative Insights',
+    publication_year: 2018,
+    isbn: '978-1789345678',
+    number_of_pages: 270,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book40.setCategories([categorySeniDanMusik, categoryPsikologi, categoryPendidikan])
+
+  const book41 = await Book.create({
+    title: 'The Age of Connection: Embracing the Digital Era',
+    author: 'Dr. Samantha White',
+    publisher: 'Connectivity Books',
+    publication_year: 2019,
+    isbn: '978-1798765432',
+    number_of_pages: 320,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book41.setCategories([categoryTeknologi, categorySainsSosial, categoryFilsafat])
+
+  const book42 = await Book.create({
+    title: 'The Quantum Revolution: Unlocking the Secrets of Quantum Computing',
+    author: 'Dr. Benjamin Hayes',
+    publisher: 'Quantum Computing Press',
+    publication_year: 2020,
+    isbn: '978-1632908765',
+    number_of_pages: 300,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book42.setCategories([categoryTeknologi, categoryFilsafat, categorySainsAlam])
+
+  const book43 = await Book.create({
+    title: 'The Mindful Leader: Nurturing Emotional Intelligence in Leadership',
+    author: 'Emma Thompson',
+    publisher: 'Leadership Press',
+    publication_year: 2018,
+    isbn: '978-1623456982',
+    number_of_pages: 280,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book43.setCategories([categoryPsikologi, categoryPengembanganDiri])
+
+  const book44 = await Book.create({
+    title: 'The New Renaissance: Innovations in Arts and Culture',
+    author: 'Dr. Adrian Bennett',
+    publisher: 'Renaissance Publishing',
+    publication_year: 2017,
+    isbn: '978-1456782345',
+    number_of_pages: 250,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book44.setCategories([categorySeniDanMusik, categoryTeknologi, categorySejarahDunia])
+
+  const book45 = await Book.create({
+    title: 'The Ethics of AI: Navigating the Moral Landscape of Artificial Intelligence',
+    author: 'Dr. Sophia Miller',
+    publisher: 'Ethical Insights',
+    publication_year: 2021,
+    isbn: '978-1543210987',
+    number_of_pages: 270,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book45.setCategories([categoryTeknologi, categoryFilsafat, categorySainsSosial])
+
+  const book46 = await Book.create({
+    title: 'The Resilient Mind: Building Mental Toughness in the Face of Adversity',
+    author: 'Dr. Alex Turner',
+    publisher: 'Resilience Books',
+    publication_year: 2019,
+    isbn: '978-1789345678',
+    number_of_pages: 260,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book46.setCategories([categoryPsikologi, categoryPengembanganDiri, categoryKesehatanDanKedokteran])
+
+  const book47 = await Book.create({
+    title: 'The Green Revolution: Sustainable Living in the Modern World',
+    author: 'Dr. Emily Green',
+    publisher: 'EcoLiving Publications',
+    publication_year: 2016,
+    isbn: '978-1635498712',
+    number_of_pages: 290,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book47.setCategories([categoryAlamDanLingkungan, categoryTeknologi, categoryPengembanganDiri])
+
+  const book48 = await Book.create({
+    title: 'The Mindful Athlete: Achieving Peak Performance Through Mental Training',
+    author: 'Michael Johnson',
+    publisher: "Athlete's Edge",
+    publication_year: 2015,
+    isbn: '978-1627364092',
+    number_of_pages: 280,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book48.setCategories([categoryOlahraga, categoryPsikologi, categoryPengembanganDiri])
+
+  const book49 = await Book.create({
+    title: 'The Age of Biotechnology: Transforming Medicine and Agriculture',
+    author: 'Dr. Olivia Parker',
+    publisher: 'BioTech Books',
+    publication_year: 2022,
+    isbn: '978-1638907654',
+    number_of_pages: 310,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book49.setCategories([categoryKesehatanDanKedokteran, categoryPertanian, categoryTeknologi])
+
+  const book50 = await Book.create({
+    title: 'The Infinite Cosmos: Exploring the Universe\'s Greatest Mysteries',
+    author: 'Dr. Robert Anderson',
+    publisher: 'Cosmos Explorations',
+    publication_year: 2020,
+    isbn: '978-1789065432',
+    number_of_pages: 320,
+    created_at: new Date(),
+    updated_at: new Date()
+  })
+  book50.setCategories([categorySainsAlam, categoryFilsafat, categoryPendidikan])
 }

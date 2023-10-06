@@ -83,19 +83,19 @@ module.exports = (sequelize) => {
           }
         }
       },
-      number_of_page: {
+      number_of_pages: {
         type: DataTypes.INTEGER,
         allowNull: false,
         validate: {
           notNull: {
-            msg: 'Number of page is required'
+            msg: 'Number of pages is required'
           },
           notEmpty: {
-            msg: 'Number of page is required'
+            msg: 'Number of pages is required'
           },
           is: {
             args: /^[0-9]+$/,
-            msg: 'Number of page must be a number'
+            msg: 'Number of pages must be a number'
           }
         }
       },

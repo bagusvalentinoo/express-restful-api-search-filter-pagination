@@ -26,8 +26,7 @@ const getCategories = async (req, res) => {
           )`),
           'book_count'
         ]
-      ],
-      distrinct: true
+      ]
     }
 
     if (search) {
