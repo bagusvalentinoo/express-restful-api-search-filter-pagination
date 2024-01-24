@@ -18,12 +18,12 @@ const getCategories = async (req, res) => {
         'title',
         'description',
         [
-          Sequelize.literal(`(
+          Sequelize.literal(`CAST((
             SELECT COUNT(*)
             FROM "book_categories" AS "BookCategory"
             INNER JOIN "books" AS "Book" ON "Book"."id" = "BookCategory"."book_id"
             WHERE "BookCategory"."category_id" = "Category"."id"
-          )`),
+          ) AS INTEGER)`),
           'book_count'
         ]
       ]

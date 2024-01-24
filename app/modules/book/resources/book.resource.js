@@ -6,7 +6,7 @@ class BookResource {
     this.publisher = data.publisher
     this.publication_year = data.publication_year
     this.isbn = data.isbn
-    this.number_of_page = data.number_of_page
+    this.number_of_pages = data.number_of_pages
     this.categories = data.Categories ? data.Categories.map((category) => { return category.title }) : []
   }
 

@@ -1,3 +1,15 @@
-/vscode
-/node_modules
+# Misc
+.idea
+.vscode
+
+# Node dependencies
+node_modules
+
+# Config files
+/app/config/*
+!/app/config/database.js
+
+# Local env files
 .env
+.env.*
+!.env.example
