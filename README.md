@@ -1,10 +1,59 @@
-# Restful API With Search Filter Pagination
+# Express RESTful API - Complex Data Management with Search, Filter, and Pagination
 
-### API Documentation
-https://documenter.getpostman.com/view/17470787/2s9Yynm4ni
+## 📝 Description
 
-### How to Use
-1. Clone this repository
-2. Open terminal and go to the project directory
-3. Run `npm install`
-4. Run `npm start`
+---
+
+## 🌐 Demo
+
+You can try the live demo here:
+
+---
+
+## ✨ Key Features
+
+---
+
+## 🛠️ Technologies Used
+
+---
+
+## 🔧 Installation
+
+### Local Installation
+
+1. **Clone the repository:**
+
+   ```bash
+   git clone https://github.com/bagusvalentinoo/express-restful-api-search-filter-pagination.git
+   cd express-restful-api-search-filter-pagination
+   ```
+
+2. **Configure environment variables:**
+
+   - Copy the example `.env` file and update the values as needed:
+     ```bash
+     cp .env.example .env
+     ```
+
+3. **Install dependencies using NPM:**
+
+   ```bash
+   npm install
+   ```
+
+---
+
+## 📜 License
+
+This project is licensed under the [MIT License](./LICENSE).
+
+---
+
+## 📞 Support
+
+If you encounter any issues or have questions, feel free to [open an issue](https://github.com/bagusvalentinoo/express-restful-api-search-filter-pagination/issues) or contact the maintainers.
+
+---
+
+## 📚 Resources
