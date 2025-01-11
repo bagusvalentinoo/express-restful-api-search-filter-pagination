@@ -2,7 +2,6 @@ import globals from 'globals'
 import pluginJs from '@eslint/js'
 import preferArrowFunctionsPlugin from 'eslint-plugin-prefer-arrow-functions'
 
-
 /** @type {import('eslint').Linter.Config[]} */
 export default [
   {
@@ -18,34 +17,19 @@ export default [
       'prefer-arrow-functions': preferArrowFunctionsPlugin
     },
     rules: {
-      'semi': [
-        'error',
-        'never'
-      ],
-      'comma-dangle': [
-        'error',
-        'never'
-      ],
-      'indent': [
-        'error',
-        2
-      ],
-      'object-curly-spacing': [
-        'error',
-        'always'
-      ],
-      'quotes': [
-        'error',
-        'single'
-      ],
+      semi: ['error', 'never'],
+      'comma-dangle': ['error', 'never'],
+      indent: ['error', 2],
+      'object-curly-spacing': ['error', 'always'],
+      quotes: ['error', 'single'],
       'prefer-arrow-functions/prefer-arrow-functions': [
         'error',
         {
-          'allowNamedFunctions': false,
-          'classPropertiesAllowed': false,
-          'disallowPrototype': false,
-          'returnStyle': 'unchanged',
-          'singleReturnOnly': false
+          allowNamedFunctions: false,
+          classPropertiesAllowed: false,
+          disallowPrototype: false,
+          returnStyle: 'unchanged',
+          singleReturnOnly: false
         }
       ]
     }
