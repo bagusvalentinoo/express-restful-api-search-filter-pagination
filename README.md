@@ -16,10 +16,10 @@ You can try the live demo here:
 
 ## 🛠️ Technologies Used
 
-- [Node.js](https://nodejs.org/en/)
-- [Express.js](https://expressjs.com/)
-- [Sequelize ORM](https://sequelize.org/)
-- [PostgreSQL](https://www.postgresql.org/)
+- <a href="https://nodejs.org/en/" target="_blank">Node.js</a>
+- <a href="https://expressjs.com/" target="_blank">Express.js</a>
+- <a href="https://sequelize.org/" target="_blank">Sequelize ORM</a>
+- <a href="https://www.postgresql.org/" target="_blank">PostgreSQL</a>
 
 ---
 
@@ -63,7 +63,7 @@ If you encounter any issues or have questions, feel free to [open an issue](http
 
 ## 📚 Resources
 
-- [Node.js Documentation](https://nodejs.org/en/docs/)
-- [Express.js Documentation](https://expressjs.com/)
-- [Sequelize ORM Documentation](https://sequelize.org/)
-- [PostgreSQL Documentation](https://www.postgresql.org/)
+- <a href="https://nodejs.org/en/" target="_blank">Node.js Documentation</a>
+- <a href="https://expressjs.com/" target="_blank">Express.js Documentation</a>
+- <a href="https://sequelize.org/" target="_blank">Sequelize Documentation</a>
+- <a href="https://www.postgresql.org/" target="_blank">PostgreSQL Documentation</a>
