@@ -16,5 +16,8 @@
     "eslint-plugin-prefer-arrow-functions": "^3.6.0",
     "globals": "^15.14.0",
     "prettier": "^3.4.2"
+  },
+  "dependencies": {
+    "winston": "^3.17.0"
   }
 }
