@@ -32,7 +32,17 @@ export default [
           singleReturnOnly: false
         }
       ]
-    }
+    },
+    ignores: [
+      'node_modules',
+      'dist',
+      'build',
+      'public',
+      'coverage',
+      'reports',
+      'logs',
+      'tmp'
+    ]
   },
   pluginJs.configs.recommended
 ]
