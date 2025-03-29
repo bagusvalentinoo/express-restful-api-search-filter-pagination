@@ -1,0 +1,14 @@
+.husky
+coverage
+dist
+logs
+node_modules
+public
+
+.gitignore
+bun.lockb
+yarn.lock
+package-lock.json
+
+LICENSE
+README.md
