@@ -4,13 +4,12 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 import app from './app.js'
-
-import logger from './utils/logger.js'
+import { logInfo } from './utils/logger.util.js'
 
 // Get the port from environment variables
-const PORT = Number(process.env.APP_PORT) || 8000
+const PORT = Number(process.env.APP_PORT)
 
 // Start the server
 app.listen(PORT, () => {
-  logger.info(`Server running on http://localhost:${PORT}`)
+  logInfo(`Server running on http://localhost:${PORT}`)
 })

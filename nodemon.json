@@ -1,7 +1,7 @@
 {
-  "watch": ["src"],
+  "watch": ["./"],
   "ext": "js,json",
   "ignore": ["src/**/*.test.js"],
-  "exec": "node ./src/server.js",
+  "exec": "NODE_ENV=development node ./src/server.js",
   "delay": "1000"
 }
