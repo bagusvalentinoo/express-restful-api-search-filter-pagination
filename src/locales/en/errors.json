@@ -1,0 +1,19 @@
+{
+  "http": {
+    "400": "Sorry, the request was invalid. Please try again.",
+    "401": "Please sign in to access this resource.",
+    "403": "You don't have permission to access this resource.",
+    "404": "Sorry, we couldn't find what you were looking for.",
+    "422": "Sorry, we couldn't process the request.",
+    "500": "Sorry, something went wrong on our end. Please try again later.",
+    "default": "Sorry, something went wrong. Please try again later."
+  },
+  "lib": {
+    "cors": {
+      "not_allowed": "Not allowed by CORS. Please check your request."
+    },
+    "rate_limiter": {
+      "too_many_requests": "Too many requests, please try again later."
+    }
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "get_data_success": "Berhasil mendapatkan {{name}}",
+  "create_data_success": "Berhasil membuat {{name}} baru",
+  "update_data_success": "Berhasil memperbarui {{name}}",
+  "delete_data_success": "Berhasil menghapus {{name}}"
+}
