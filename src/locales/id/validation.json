@@ -1,0 +1,48 @@
+{
+  "required": "Pastikan untuk mengisi kolom {{field}}",
+  "invalid_type": "Kolom {{field}} harus memiliki nilai yang sesuai",
+  "boolean": "Kolom {{field}} harus berupa nilai boolean",
+  "number": "Kolom {{field}} harus berupa angka yang valid",
+  "array": "Kolom {{field}} harus berupa array",
+  "object": "Kolom {{field}} harus berupa objek",
+
+  "alpha": "Kolom {{field}} hanya boleh berisi huruf",
+  "alphanumeric": "Kolom {{field}} hanya boleh berisi huruf dan angka",
+  "email": "Kolom {{field}} harus berupa alamat email yang valid",
+  "url": "Kolom {{field}} harus berupa URL yang valid",
+  "phone": "Kolom {{field}} harus berupa nomor telepon yang valid",
+  "ip": "Kolom {{field}} harus berupa alamat IP yang valid",
+  "uuid": "Kolom {{field}} harus berupa UUID yang valid",
+  "regex": "Kolom {{field}} harus sesuai dengan pola berikut: {{regex}}",
+
+  "numeric": "Kolom {{field}} hanya boleh berisi angka",
+  "integer": "Kolom {{field}} harus berupa bilangan bulat",
+  "decimal": "Kolom {{field}} harus berupa bilangan desimal",
+
+  "min": "Kolom {{field}} harus memiliki minimal {{min}} karakter",
+  "max": "Kolom {{field}} harus memiliki maksimal {{max}} karakter",
+  "between": "Kolom {{field}} harus berada di antara {{min}} dan {{max}}",
+  "min_items": "Minimal {{min}} {{field}} harus dipilih",
+  "max_items": "Kolom {{field}} tidak boleh lebih dari {{max}} item",
+
+  "equal": "Kolom {{field}} harus sama dengan {{value}}",
+  "not_equal": "Kolom {{field}} tidak boleh sama dengan {{value}}",
+  "matches": "Kolom {{field}} harus sama dengan {{other}}",
+  "in": "Kolom {{field}} harus ada dalam daftar berikut: {{values}}",
+  "not_in": "Kolom {{field}} tidak boleh ada dalam daftar berikut: {{values}}",
+  "enum": "Kolom {{field}} harus memiliki salah satu dari nilai berikut: {{values}}",
+
+  "unique": "Kolom {{field}} harus unik",
+  "exists": "Kolom {{field}} harus ada",
+  "not_exists": "Kolom {{field}} sudah ada",
+
+  "date": "Kolom {{field}} harus berupa tanggal yang valid",
+  "datetime": "Kolom {{field}} harus berupa waktu yang valid",
+
+  "file_size": "Kolom {{field}} tidak boleh melebihi ukuran {{size}}",
+  "file_type": "Kolom {{field}} harus berupa salah satu dari tipe berikut: {{types}}",
+
+  "password_strength": "Kolom {{field}} harus mengandung setidaknya satu huruf besar, satu huruf kecil, satu angka, dan satu karakter khusus",
+
+  "custom": "Kolom {{field}} tidak valid"
+}
