@@ -12,7 +12,7 @@ import { localizationMiddleware } from './middlewares/localization.middleware.js
 import apiV1Router from './routes/api/v1/api.route.js'
 
 // Load environment variables
-dotenv.config()
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 
 // Create an Express application
 const app = express()

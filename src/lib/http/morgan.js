@@ -9,7 +9,7 @@ import {
 } from '../../constants/logger.constant.js'
 
 // Load environment variables
-dotenv.config()
+dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 
 // Get the current environment
 const env = process.env.NODE_ENV
