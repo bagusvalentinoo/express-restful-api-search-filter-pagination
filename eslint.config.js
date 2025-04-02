@@ -76,6 +76,18 @@ export default [
       'object-curly-spacing': ['error', 'always'], // Enforce consistent spacing inside curly braces
       'template-curly-spacing': ['error', 'never'], // Enforce consistent spacing inside template literals
 
+      // eslint-prefer-arrow-functions
+      'prefer-arrow-functions/prefer-arrow-functions': [
+        'error',
+        {
+          allowNamedFunctions: false,
+          classPropertiesAllowed: false,
+          disallowPrototype: false,
+          returnStyle: 'unchanged',
+          singleReturnOnly: false
+        }
+      ],
+
       // eslint-plugin-import
       'import/order': [
         // Enforce consistent import order
