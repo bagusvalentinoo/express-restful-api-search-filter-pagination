@@ -27,6 +27,7 @@ export default [
         2,
         {
           SwitchCase: 1, // Enforce consistent indentation for switch cases
+          ignoredNodes: ['PropertyDefinition'],
           FunctionExpression: { parameters: 'first' }, // Enforce consistent indentation for function expressions
           CallExpression: { arguments: 'first' }, // Enforce consistent indentation for call expressions
           ArrayExpression: 'first', // Enforce consistent indentation for array expressions
