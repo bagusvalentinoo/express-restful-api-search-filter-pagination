@@ -1,4 +1,5 @@
 import pluginJs from '@eslint/js'
+import eslintConfigPrettier from 'eslint-config-prettier'
 import eslintPluginImport from 'eslint-plugin-import'
 import eslintPluginJsdoc from 'eslint-plugin-jsdoc'
 import eslintPluginPreferArrowFunctions from 'eslint-plugin-prefer-arrow-functions'
@@ -27,7 +28,7 @@ export default [
         2,
         {
           SwitchCase: 1, // Enforce consistent indentation for switch cases
-          ignoredNodes: ['PropertyDefinition'],
+          ignoredNodes: ['PropertyDefinition'], // Ignore property definitions and conditional expressions
           FunctionExpression: { parameters: 'first' }, // Enforce consistent indentation for function expressions
           CallExpression: { arguments: 'first' }, // Enforce consistent indentation for call expressions
           ArrayExpression: 'first', // Enforce consistent indentation for array expressions
@@ -127,5 +128,6 @@ export default [
       'tmp'
     ]
   },
-  pluginJs.configs.recommended
+  pluginJs.configs.recommended,
+  eslintConfigPrettier
 ]
