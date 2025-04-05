@@ -12,7 +12,7 @@ export default (sequelize, DataTypes) => {
           model: 'users',
           key: 'id'
         },
-        onUpdate: 'CASCADE'
+        onDelete: 'CASCADE'
       },
       permission_id: {
         type: DataTypes.UUID,
@@ -21,7 +21,7 @@ export default (sequelize, DataTypes) => {
           model: 'permissions',
           key: 'id'
         },
-        onUpdate: 'CASCADE'
+        onDelete: 'CASCADE'
       }
     },
     {
