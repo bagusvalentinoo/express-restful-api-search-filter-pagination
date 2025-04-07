@@ -1,7 +1,15 @@
 import { Model } from 'sequelize'
 
 export default (sequelize, DataTypes) => {
-  class Session extends Model {}
+  class Session extends Model {
+    static associate(models) {
+      // BelongsTo Relationships
+      this.belongsTo(models.user, {
+        foreignKey: 'user_id',
+        as: 'user'
+      })
+    }
+  }
 
   Session.init(
     {

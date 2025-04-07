@@ -3,6 +3,17 @@ import { Model } from 'sequelize'
 export default (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
+      // HasMany Relationships
+      this.hasMany(models.session, {
+        foreignKey: 'user_id',
+        as: 'sessions'
+      })
+
+      this.hasMany(models.account, {
+        foreignKey: 'user_id',
+        as: 'accounts'
+      })
+
       // BelongsToMany Relationships
       this.belongsToMany(models.role, {
         through: models.userRole,
