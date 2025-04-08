@@ -3,10 +3,15 @@ import { Model } from 'sequelize'
 export default (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
-      // HasOne Relationship
+      // HasOne Relationships
       this.hasOne(models.emailVerification, {
         foreignKey: 'user_id',
         as: 'emailVerification'
+      })
+
+      this.hasOne(models.passwordReset, {
+        foreignKey: 'user_id',
+        as: 'passwordReset'
       })
 
       // HasMany Relationships
