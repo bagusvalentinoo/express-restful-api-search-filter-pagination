@@ -28,12 +28,12 @@ export default (sequelize, DataTypes) => {
         },
         onDelete: 'CASCADE'
       },
-      token: {
+      refresh_token: {
         type: DataTypes.STRING(255),
         allowNull: false,
         unique: true
       },
-      expires_at: {
+      refresh_token_expires_at: {
         type: DataTypes.DATE,
         allowNull: false
       },
