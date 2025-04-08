@@ -13,21 +13,6 @@ export default (sequelize, DataTypes) => {
         foreignKey: 'user_id',
         as: 'accounts'
       })
-
-      // BelongsToMany Relationships
-      this.belongsToMany(models.role, {
-        through: models.userRole,
-        foreignKey: 'user_id',
-        otherKey: 'role_id',
-        as: 'roles'
-      })
-
-      this.belongsToMany(models.permission, {
-        through: models.userPermission,
-        foreignKey: 'user_id',
-        otherKey: 'permission_id',
-        as: 'permissions'
-      })
     }
   }
 
