@@ -3,6 +3,12 @@ import { Model } from 'sequelize'
 export default (sequelize, DataTypes) => {
   class User extends Model {
     static associate(models) {
+      // HasOne Relationship
+      this.hasOne(models.emailVerification, {
+        foreignKey: 'user_id',
+        as: 'emailVerification'
+      })
+
       // HasMany Relationships
       this.hasMany(models.session, {
         foreignKey: 'user_id',
