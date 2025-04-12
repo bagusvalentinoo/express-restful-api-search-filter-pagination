@@ -11,6 +11,11 @@ import { logDebug, logError } from '../utils/logger.util.js'
 dotenv.config({ path: `.env.${process.env.NODE_ENV}` })
 
 // Configure Sequelize instance, I'm use DB Credentials method, you can use other methods (e.g., DB URL, etc.)
+
+// If you use DB URL
+// const sequelize = new Sequelize(process.env.DB_URL)
+
+// If you use DB Credentials
 const sequelize = new Sequelize({
   database: process.env.DB_NAME, // Your database name
   username: process.env.DB_USERNAME, // Your database username
