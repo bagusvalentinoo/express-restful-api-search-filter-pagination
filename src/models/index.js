@@ -17,11 +17,9 @@ const sequelize = new Sequelize({
   password: process.env.DB_PASSWORD, // Your database password
   host: process.env.DB_HOST, // Your database host
   port: process.env.DB_PORT || 5432, // Your database port (optional, default is 5432)
-  dialect: 'postgres', // Your database dialect (e.g., 'mysql', 'postgres', etc.)
+  dialect: process.env.DB_DIALECT, // Your database dialect (e.g., 'mysql', 'postgres', etc.)
   logging:
-    process.env.NODE_ENV === 'development'
-      ? (...msg) => logDebug(...msg)
-      : false, // Disable logging in production
+    process.env.NODE_ENV === 'development' ? msg => logDebug(msg) : false, // Disable logging in production
   pool: {
     max: parseInt(process.env.DB_POOL_MAX) || 5, // Maximum number of connections (optional, default is 5)
     min: parseInt(process.env.DB_POOL_MIN) || 0, // Minimum number of connections (optional, default is 0)
