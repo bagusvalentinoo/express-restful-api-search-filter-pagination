@@ -16,7 +16,6 @@
  *   message: 'Successfully retrieved data',
  *   data: { id: 1, name: 'John Doe' }
  * })
- })
  * ```
  */
 export const responseSuccess = (res, { statusCode, message, data }) =>

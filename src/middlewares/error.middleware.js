@@ -18,7 +18,7 @@ import { customFormatZodError } from '../utils/validation.util.js'
  */
 export const errorMiddleware = (error, req, res, _next) => {
   let statusCode = 500 // Default status code
-  let message = t('http.default', { ns: 'errors' }) // Default error message
+  let message = t('http.default', { ns: 'errors' }) // Default error message with dynamic message language
   let errors = null // Default errors
 
   if (error instanceof FormattedResponseError) {
@@ -28,7 +28,7 @@ export const errorMiddleware = (error, req, res, _next) => {
   // Check if the error is an instance of ZodError
   if (error instanceof ZodError) {
     statusCode = 422 // Set the status code
-    message = t('http.422', { ns: 'errors' }) // Set the message for ZodError validation error
+    message = t('http.422', { ns: 'errors' }) // Set the message for ZodError validation error with dynamic message language
     errors = customFormatZodError(error.issues) // Set the errors for ZodError validation error
   }
 

@@ -10,16 +10,16 @@ import {
 
 // Initialize i18next
 i18next.use(Backend).init({
-  fallbackLng: DEFAULT_LANGUAGE,
-  preload: SUPPORTED_LANGUAGES,
-  ns: NAMESPACES,
-  lng: DEFAULT_LANGUAGE,
-  supportedLngs: SUPPORTED_LANGUAGES,
+  fallbackLng: DEFAULT_LANGUAGE, // Default language
+  preload: SUPPORTED_LANGUAGES, // Supported languages
+  ns: NAMESPACES, // Namespaces
+  lng: DEFAULT_LANGUAGE, // Default language
+  supportedLngs: SUPPORTED_LANGUAGES, // Supported languages
   interpolation: {
     escapeValue: true
   },
   backend: {
-    loadPath: `${LANGUAGES_DIR}/{{lng}}/{{ns}}.json`
+    loadPath: `${LANGUAGES_DIR}/{{lng}}/{{ns}}.json` // Load language files
   }
 })
 
