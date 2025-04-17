@@ -1,19 +1,19 @@
 {
   "http": {
-    "400": "Permintaan tidak valid, silakan coba lagi dengan format yang benar.",
-    "401": "Silakan login terlebih dahulu untuk mengakses sumber daya ini.",
-    "403": "Anda tidak memiliki akses ke sumber daya ini.",
-    "404": "Sumber daya yang diminta tidak ditemukan.",
-    "422": "Terjadi kesalahan saat memproses permintaan.",
-    "500": "Terjadi kesalahan pada server, silakan coba lagi nanti.",
-    "default": "Terjadi kesalahan tak terduga, silakan coba lagi nanti."
+    "400": "Permintaan tidak valid, silakan coba lagi dengan format yang benar",
+    "401": "Silakan login terlebih dahulu untuk mengakses sumber daya ini",
+    "403": "Anda tidak memiliki akses ke sumber daya ini",
+    "404": "Sumber daya yang diminta tidak ditemukan",
+    "422": "Terjadi kesalahan saat memproses permintaan",
+    "500": "Terjadi kesalahan pada server, silakan coba lagi nanti",
+    "default": "Terjadi kesalahan tak terduga, silakan coba lagi nanti"
   },
   "lib": {
     "cors": {
-      "not_allowed": "Tidak diizinkan oleh CORS, silakan coba lagi dari origin yang berbeda."
+      "not_allowed": "Tidak diizinkan oleh CORS, silakan coba lagi dari origin yang berbeda"
     },
     "rate_limiter": {
-      "too_many_requests": "Terlalu banyak permintaan, silakan coba lagi dalam beberapa saat."
+      "too_many_requests": "Terlalu banyak permintaan, silakan coba lagi dalam beberapa saat"
     }
   }
 }

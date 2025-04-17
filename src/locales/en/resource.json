@@ -1,6 +1,6 @@
 {
-  "get_data_success": "{{name}} data has been successfully retrieved.",
-  "create_data_success": "{{name}} data has been successfully created.",
-  "update_data_success": "{{name}} data has been successfully updated.",
-  "delete_data_success": "{{name}} data has been successfully deleted."
+  "get_data_success": "{{name}} data has been successfully retrieved",
+  "create_data_success": "{{name}} data has been successfully created",
+  "update_data_success": "{{name}} data has been successfully updated",
+  "delete_data_success": "{{name}} data has been successfully deleted"
 }
