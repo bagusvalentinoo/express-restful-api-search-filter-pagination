@@ -10,10 +10,11 @@ export class FormattedResponseError extends Error {
   /**
    * Creates an instance of FormattedResponseError.
    *
-   * @param {number} _statusCode - HTTP status code.
+   * @param {number} statusCode - HTTP status code.
    * @param {string} message - Error message.
    */
-  constructor(_statusCode, message) {
+  constructor(statusCode, message) {
     super(message)
+    this.statusCode = statusCode
   }
 }

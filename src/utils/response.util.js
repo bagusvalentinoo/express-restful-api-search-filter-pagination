@@ -1,11 +1,11 @@
 /**
- * Utility function to send a successful HTTP response to clients.
+ * Utility function to send a successful HTTP response to clients
  *
- * @param {import('express').Response} res - The Express response object.
- * @param {number} statusCode - The HTTP status code.
- * @param {string} message - The response message.
- * @param {object} data - The response data.
- * @param {object} errors - The response errors.
+ * @param {import('express').Response} res - The Express response object
+ * @param {object} options - The response options
+ * @param {number} options.statusCode - The HTTP status code
+ * @param {string} options.message - The response message
+ * @param {object} [options.data=null] - The response data
  *
  * @returns {import('express').Response}
  *
@@ -18,20 +18,21 @@
  * })
  * ```
  */
-export const responseSuccess = (res, { statusCode, message, data }) =>
+export const responseSuccess = (res, { statusCode, message, data = null }) =>
   res.status(statusCode).json({
     status: 'success',
     message,
-    data: data || null
+    data
   })
 
 /**
- * Utility function to send an error HTTP response to clients.
+ * Utility function to send an error HTTP response to clients
  *
- * @param {import('express').Response} res - The Express response object.
- * @param {number} statusCode - The HTTP status code.
- * @param {string} message - The response message.
- * @param {object} errors - The response errors.
+ * @param {import('express').Response} res - The Express response object
+ * @param {object} options - The response options
+ * @param {number} options.statusCode - The HTTP status code
+ * @param {string} options.message - The response message
+ * @param {object|null} [options.errors=null] - The response errors
  *
  * @returns {import('express').Response}
  *
@@ -82,9 +83,9 @@ export const responseSuccess = (res, { statusCode, message, data }) =>
  *   errors: null
  * })
  */
-export const responseError = (res, { statusCode, message, errors }) =>
+export const responseError = (res, { statusCode, message, errors = null }) =>
   res.status(statusCode).json({
     status: 'error',
     message,
-    errors: errors || null
+    errors
   })

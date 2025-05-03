@@ -1,11 +1,11 @@
 import { existsSync, readdirSync } from 'fs'
 
 /**
- * Retrieves the namespaces from the locales directory.
+ * Get all namespace names from locales directory
  *
  * @param {string[]} supportedLanguages - The supported languages
  *
- * @returns {string[]} An array of unique, sorted namespace names.
+ * @returns {string[]} All namespace names
  */
 export const getNamespaces = (
   supportedLanguages,
@@ -31,11 +31,11 @@ export const getNamespaces = (
 }
 
 /**
- * Parses the language header to get the primary language.
+ * Parse Accept-Language header to get primary language
  *
- * @param {string} header - The language header string.
+ * @param {string} header - Accept-Language header value
  *
- * @returns {string | null} The primary language code or null if no language is found.
+ * @returns {string | null} Primary language code or null if none found
  */
 export const parseLanguageHeader = header => {
   // Check if header is not a string or is empty
@@ -46,7 +46,7 @@ export const parseLanguageHeader = header => {
     .split(',')
     .map(lang => {
       const [code] = lang.split(';')
-      return code?.trim().toLowerCase()
+      return code.trim().toLowerCase()
     })
     .filter(Boolean)
 
