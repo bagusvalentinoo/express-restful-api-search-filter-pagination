@@ -46,45 +46,80 @@ const sequelize = new Sequelize({
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = dirname(__filename)
 
-const db = {}
-
-/**
- * Reads models from the specified directory
- *
- * @param {string} dir - The directory to read models from
- *
- * @returns {void}
- */
-const readModels = dir => {
-  const entries = readdirSync(dir)
-
-  entries.forEach(entry => {
-    const fullPath = join(dir, entry)
-    const stats = statSync(fullPath)
-
-    if (stats.isDirectory()) readModels(fullPath)
-    else if (entry.slice(-3) === '.js' && entry !== basename(__filename)) {
-      import(fullPath)
-        .then(model => {
-          if (model && model.default) {
-            const namedModel = model.default(sequelize, DataTypes)
-
-            db[namedModel.name] = namedModel
-          }
-        })
-        .catch(error => logError(`Error loading model at ${fullPath}:`, error))
-    }
-  })
+const db = {
+  sequelize,
+  Sequelize
 }
 
-// Read models
-readModels(__dirname)
+/**
+ * Recursively finds all model files in directory
+ *
+ * @param {string} dirPath - Directory to scan
+ *
+ * @returns {string[]} - Array of file paths
+ */
+const findModelFiles = dirPath =>
+  // Find all model files in directory
+  readdirSync(dirPath).reduce((files, file) => {
+    // Get full path of file
+    const fullPath = join(dirPath, file)
+    // Check if file is directory
+    const isDirectory = statSync(fullPath).isDirectory()
 
-// Associate models
-Object.keys(db).forEach(modelName => {
-  if (db[modelName].associate) db[modelName].associate(db)
-})
+    // If directory, recursively find model files
+    if (isDirectory) return [...files, ...findModelFiles(fullPath)]
+    // Skip index.js and non-JS files
+    if (
+      file === 'index.js' ||
+      file === basename(__filename) ||
+      !file.endsWith('.js')
+    )
+      return files
 
-db.sequelize = sequelize
+    // Add model file to list
+    return [...files, fullPath]
+  }, [])
 
+/**
+ * Load and initialize models
+ *
+ * @returns {Promise<void>}
+ */
+const initializeModels = async () => {
+  // Get all model files
+  const modelFiles = findModelFiles(__dirname)
+
+  // Load and initialize models
+  for (const filePath of modelFiles) {
+    try {
+      // Import model
+      const modelModule = await import(filePath)
+
+      // Check if default export exists
+      if (modelModule?.default) {
+        // Create model
+        const model = modelModule.default(sequelize, DataTypes)
+
+        // Add model to database
+        db[model.name] = model
+      }
+    } catch (error) {
+      // Log error and throw
+      logError(`Error loading model at ${filePath}:`, error)
+      throw error
+    }
+  }
+
+  // Setup associations after all models are loaded
+  Object.values(db)
+    .filter(model => typeof model.associate === 'function')
+    .forEach(model => {
+      model.associate(db)
+      sequelize.modelManager.addModel(model)
+    })
+}
+
+initializeModels()
+
+// Export default database
 export default db
