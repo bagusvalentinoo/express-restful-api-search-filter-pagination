@@ -4,7 +4,6 @@ import { t } from '../lib/i18n/i18n.js'
 import { FormattedResponseError } from '../utils/formatted-response-error.util.js'
 import { logError } from '../utils/logger.util.js'
 import { responseError } from '../utils/response.util.js'
-import { customFormatZodError } from '../utils/validation.util.js'
 
 /**
  * Handles errors and sends a formatted error response
@@ -29,7 +28,12 @@ export const errorMiddleware = (error, req, res, _next) => {
   if (error instanceof ZodError) {
     statusCode = 422 // Set the status code
     message = t('http.422', { ns: 'errors' }) // Set the message for ZodError validation error with dynamic message language
-    errors = customFormatZodError(error.issues) // Set the errors for ZodError validation error
+    errors = error.issues.map(issue => {
+      return {
+        field: issue.path.join('.'),
+        message: issue.message
+      }
+    }) // Set the errors for ZodError validation error
   }
 
   // Log all errors except ZodError and FormattedResponseError with shouldLog === false

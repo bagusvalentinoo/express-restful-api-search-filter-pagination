@@ -15,23 +15,3 @@
  * ```
  */
 export const validate = (schema, data) => schema.parse(data)
-
-/**
- * Custom format Zod error
- *
- * @param {import('zod').ZodIssue[]} issues - Zod Issues
- *
- * @returns {Array} Custom Zod error response
- *
- * @example
- * ```javascript
- * const errors = customFormatZodError(error.issues)
- * ```
- */
-export const customFormatZodError = issues =>
-  issues.map(issue => {
-    return {
-      field: issue.path.join('.'),
-      message: issue.message
-    }
-  })

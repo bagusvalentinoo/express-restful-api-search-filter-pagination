@@ -1,6 +1,28 @@
 import { changeLanguage } from 'i18next'
 
-import { parseLanguageHeader } from '../utils/i18n.util.js'
+/**
+ * Parse Accept-Language header to get primary language
+ *
+ * @param {string} header - Accept-Language header value
+ *
+ * @returns {string | null} Primary language code or null if none found
+ */
+const parseLanguageHeader = header => {
+  // Check if header is not a string or is empty
+  if (!header || typeof header !== 'string' || header.trim() === '') return null
+
+  // Split the header by commas and map over the languages
+  const languages = header
+    .split(',')
+    .map(lang => {
+      const [code] = lang.split(';')
+      return code.trim().toLowerCase()
+    })
+    .filter(Boolean)
+
+  // Return the first language if there are any, otherwise return null
+  return languages.length > 0 ? languages[0] : null
+}
 
 /**
  * Middleware to handle request localization

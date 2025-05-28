@@ -1,4 +1,34 @@
-import { getNamespaces } from '../utils/i18n.util.js'
+import { existsSync, readdirSync } from 'fs'
+
+/**
+ * Get all namespace names from locales directory
+ *
+ * @param {string[]} supportedLanguages - The supported languages
+ *
+ * @returns {string[]} All namespace names
+ */
+const getNamespaces = (
+  supportedLanguages,
+  baseLanguagePath = './src/locales'
+) => {
+  // Map over supported languages and collect namespaces
+  const allNamespaces = supportedLanguages.flatMap(language => {
+    const languagePath = `${baseLanguagePath}/${language}`
+
+    // Check if the language directory exists
+    if (!existsSync(languagePath)) return []
+
+    const files = readdirSync(languagePath)
+      .filter(file => file.endsWith('.json')) // Filter only JSON files
+      .map(file => file.replace(/\.json$/, '')) // Remove the `.json` extension
+
+    // Read all JSON files in the directory
+    return files
+  })
+
+  // Deduplicate and sort the namespaces
+  return Array.from(new Set(allNamespaces)).sort()
+}
 
 /**
  * Base path for language files
