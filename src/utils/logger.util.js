@@ -3,8 +3,8 @@ import logger from '../lib/logger/winston.js'
 /**
  * Log error message with stack trace
  *
- * @param {Error} error - The error object.
- * @param {object} context - The context object.
+ * @param {Error} error - The error object
+ * @param {object} context - The context object
  *
  * @returns {void}
  *

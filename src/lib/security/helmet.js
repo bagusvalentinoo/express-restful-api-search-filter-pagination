@@ -1,9 +1,9 @@
 import helmet from 'helmet'
 
 /**
- * Configures security headers for Express applications using Helmet.
+ * Configures security headers for Express applications using Helmet
  *
- * @returns An Express middleware function configured with Helmet security settings.
+ * @returns An Express middleware function configured with Helmet security settings
  *
  * @example
  * ```javascript

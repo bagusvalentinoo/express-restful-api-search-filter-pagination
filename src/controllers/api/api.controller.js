@@ -4,9 +4,9 @@ import { responseSuccess } from '../../utils/response.util.js'
 /**
  * Handles a GET request to welcome API /
  *
- * @param {import('express').Request} req - The Express request object.
- * @param {import('express').Response} res - The Express response object.
- * @param {import('express').NextFunction} next - The Express next function.
+ * @param {import('express').Request} _req - The Express request object
+ * @param {import('express').Response} res - The Express response object
+ * @param {import('express').NextFunction} next - The Express next function
  *
  * @returns {import('express').Response}
  *

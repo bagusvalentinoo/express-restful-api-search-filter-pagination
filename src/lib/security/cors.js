@@ -8,16 +8,9 @@ import {
 import { t } from '../../lib/i18n/i18n.js'
 
 /**
- * Get the CORS not allowed error message
+ * Configures the CORS middleware for the application
  *
- * @returns {string} - The CORS not allowed error message
- */
-const getCorsNotAllowedError = () => t('lib.cors.not_allowed', { ns: 'errors' })
-
-/**
- * Configures the CORS middleware for the application.
- *
- * @returns - An Express middleware function configured with CORS settings.
+ * @returns - An Express middleware function configured with CORS settings
  *
  * @example
  * ```javascript
@@ -36,7 +29,8 @@ export const corsConfig = () =>
         process.env.NODE_ENV === 'development'
       )
         callback(null, true)
-      else callback(new Error(getCorsNotAllowedError()))
+      else
+        callback(new Error(() => t('lib.cors.not_allowed', { ns: 'errors' })))
     },
     methods: [...CORS_ALLOWED_METHODS], // Allow specific HTTP methods
     allowedHeaders: [...CORS_ALLOWED_HEADERS], // Allow specific headers
