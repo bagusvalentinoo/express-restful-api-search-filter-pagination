@@ -7,12 +7,12 @@ import { responseError } from '../utils/response.util.js'
 import { customFormatZodError } from '../utils/validation.util.js'
 
 /**
- * Handles errors and sends a formatted error response.
+ * Handles errors and sends a formatted error response
  *
- * @param {Error} error - The error object.
- * @param {import('express').Request} req - The Express request object.
- * @param {import('express').Response} res - The Express response object.
- * @param {import('express').NextFunction} _next - The next middleware function.
+ * @param {Error} error - The error object
+ * @param {import('express').Request} req - The Express request object
+ * @param {import('express').Response} res - The Express response object
+ * @param {import('express').NextFunction} _next - The next middleware function
  *
  * @returns {import('express').Response}
  */
@@ -32,8 +32,11 @@ export const errorMiddleware = (error, req, res, _next) => {
     errors = customFormatZodError(error.issues) // Set the errors for ZodError validation error
   }
 
-  // Log the all error except ZodError validation error
-  if (!(error instanceof ZodError))
+  // Log all errors except ZodError and FormattedResponseError with shouldLog === false
+  if (
+    !(error instanceof ZodError) &&
+    (!(error instanceof FormattedResponseError) || error.shouldLog)
+  )
     logError(error, {
       method: req.method,
       url: req.originalUrl

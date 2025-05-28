@@ -1,5 +1,5 @@
 /**
- * Class representing a formatted response error.
+ * Class representing a formatted response error
  *
  * @example
  * ```javascript
@@ -8,13 +8,15 @@
  */
 export class FormattedResponseError extends Error {
   /**
-   * Creates an instance of FormattedResponseError.
+   * Creates an instance of FormattedResponseError
    *
-   * @param {number} statusCode - HTTP status code.
-   * @param {string} message - Error message.
+   * @param {number} statusCode - HTTP status code
+   * @param {string} message - Error message
+   * @param {boolean} [shouldLog=false] - Whether to log this error
    */
-  constructor(statusCode, message) {
+  constructor(statusCode, message, shouldLog = false) {
     super(message)
     this.statusCode = statusCode
+    this.shouldLog = shouldLog
   }
 }
